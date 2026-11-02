@@ -1,0 +1,28 @@
+#1. Workflow Identification
+name: Lint and Coverage
+
+#2. Trigger Event
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+#3. Execution Environment and Task
+jobs:
+  lints:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dart-lang/setup-dart@v1
+      - run: dart pub get
+      - run: dart format --output=none --set-exit-if-changed .
+      - run: dart analyze --fatal-infos
+
+  coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dart-lang/setup-dart@v1
+      - run: dart pub get
+      - name: Test with coverage (fails below 95%)
+        run: MIN_COVERAGE=95 sh tool/coverage.sh
