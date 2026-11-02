@@ -1,0 +1,15 @@
+name: country_time
+description: Show the current local time for ISO country codes, alongside the device time.
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: ^3.0.0
+
+dependencies:
+  timezone: ^0.10.1
+
+dev_dependencies:
+  coverage: ^1.16.0
+  lints: ^6.1.0
+  test: ^1.25.0

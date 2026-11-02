@@ -1,0 +1,31 @@
+# Effective Dart rules (package:lints/recommended plus the Effective Dart set).
+include: package:lints/recommended.yaml
+
+analyzer:
+  exclude:
+    - lib/src/countries.dart # generated
+
+linter:
+  rules:
+    # Style
+    - always_declare_return_types
+    - avoid_catches_without_on_clauses
+    - avoid_final_parameters
+    - directives_ordering
+    - prefer_final_locals
+    - prefer_single_quotes
+    - sort_constructors_first
+    - unawaited_futures
+    # Documentation
+    - slash_for_doc_comments
+    - package_api_docs
+    - public_member_api_docs
+    # Usage / design
+    - avoid_classes_with_only_static_members
+    - avoid_dynamic_calls
+    - avoid_function_literals_in_foreach_calls
+    - prefer_const_constructors
+    - prefer_const_declarations
+    - prefer_expression_function_bodies
+    - use_super_parameters
+    - omit_local_variable_types
