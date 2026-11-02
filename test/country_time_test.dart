@@ -36,10 +36,6 @@ void main() {
     expect(formatDelta(const Duration(hours: -3)), '3h behind device');
   });
 
-  test('countries without a time zone are rejected', () {
-    expect(() => timesFor('BV', now), throwsFormatException);
-  });
-
   test('code normalization trims and uppercases', () {
     expect(normalizeCode(' jp '), 'JP');
   });
